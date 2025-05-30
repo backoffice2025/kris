@@ -1,0 +1,331 @@
+/* Main container styles */
+.kri-container {
+  max-width: 900px;
+  margin: 10px auto;
+  padding: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.kri-container h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+/* Form group styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #34495e;
+  font-size: 14px;
+}
+
+.form-group select,
+.form-group input[type="date"],
+.form-group input[type="text"],
+.form-group input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Mobile-specific input enhancements */
+.form-group select {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 15px;
+}
+
+/* Item row styles */
+.item-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.item-row input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.item-row .remove-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 16px;
+  min-width: 40px;
+}
+
+.item-row .remove-btn:hover {
+  background-color: #c0392b;
+}
+
+.item-row .remove-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+/* Button styles */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.add-btn,
+.submit-btn,
+.print-btn {
+  padding: 14px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+}
+
+.add-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.add-btn:hover {
+  background-color: #2980b9;
+}
+
+.submit-btn {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.submit-btn:hover {
+  background-color: #27ae60;
+}
+
+.print-btn {
+  background-color: #9b59b6;
+  color: white;
+}
+
+.print-btn:hover {
+  background-color: #8e44ad;
+}
+
+.add-btn:disabled,
+.submit-btn:disabled,
+.print-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+/* Error message styles */
+.error-message {
+  color: #e74c3c;
+  background-color: #fadbd8;
+  padding: 12px 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  border-left: 4px solid #e74c3c;
+  font-size: 14px;
+}
+
+/* Loading indicator */
+.loading {
+  text-align: center;
+  padding: 30px;
+  font-size: 16px;
+  color: #7f8c8d;
+}
+
+/* Print view specific styles */
+.print-view {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.print-view h2 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.print-view .print-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.print-view .print-header div {
+  margin-bottom: 8px;
+}
+
+.print-view .print-items {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.print-view .print-items th {
+  background-color: #34495e;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+.print-view .print-items td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.print-view .print-items tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.print-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 480px) {
+  .kri-container {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 6px;
+  }
+  
+  .kri-container h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .item-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .item-row input {
+    width: 100%;
+  }
+  
+  .item-row .remove-btn {
+    width: 100%;
+    padding: 12px;
+  }
+  
+  .button-group {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 20px;
+  padding: 0 5px;
+  width: 100%;
+  }
+  
+  .add-btn,
+  .submit-btn,
+  .print-btn {
+    width: 100%;
+    padding: 14px;
+  margin: 0;
+  }
+  
+  .print-view .print-items {
+    font-size: 12px;
+  }
+  
+  .print-view .print-items th,
+  .print-view .print-items td {
+    padding: 6px 4px;
+  }
+  
+  .print-actions {
+    flex-direction: column;
+    gap: 8px;
+  padding: 0 5px;
+    width: 100%;
+  }
+}
+
+/* Tablet and larger mobile styles */
+@media (min-width: 481px) and (max-width: 768px) {
+  .kri-container {
+    margin: 10px auto;
+    padding: 15px;
+  }
+  
+  .button-group {
+    gap: 10px;
+  }
+  
+  .add-btn,
+  .submit-btn,
+  .print-btn {
+    flex: 1;
+    min-width: auto;
+  }
+}
+
+/* Print styles */
+@media print {
+  .kri-container {
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+  }
+  
+  .print-actions {
+    display: none;
+  }
+  
+  body {
+    background: white;
+    color: black;
+    font-size: 12pt;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .print-view {
+    padding: 0;
+  }
+  
+  .print-view .print-items {
+    page-break-inside: avoid;
+  }
+}

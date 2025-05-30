@@ -1,0 +1,300 @@
+.admin-dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.dashboard-header {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+/* Add this to your existing CSS */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  margin-bottom: 15px;
+  border: 1px solid #eee; /* Optional border */
+}
+
+.print-items {
+  min-width: 600px; /* Minimum width before scrolling kicks in */
+}
+
+/* Optional: Add a shadow to indicate scrollable area */
+.table-responsive::-webkit-scrollbar {
+  height: 8px;
+}
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  .dashboard-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.logout-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  .logout-btn {
+    width: auto;
+    margin-top: 0;
+  }
+}
+
+.logout-btn:hover {
+  background-color: #d32f2f;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 600px) {
+  .filters {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .filter-group {
+    min-width: 200px;
+    flex: 1;
+  }
+}
+
+.filter-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.filter-group input,
+.filter-group select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.stats-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 600px) {
+  .stats-summary {
+    flex-direction: row;
+  gap: 20px;
+  }
+}
+
+.stat-card {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1;
+}
+
+.stat-card h3 {
+  margin-top: 0;
+  color: #555;
+  font-size: 16px;
+}
+
+.stat-card p {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 10px 0 0;
+}
+
+.table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 20px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+th, td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  th, td {
+    padding: 12px 15px;
+  }
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+tr.approved {
+  background-color: #e8f5e9;
+}
+
+tr.pending {
+  background-color: #fff8e1;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.status-badge.approved {
+  background-color: #4caf50;
+  color: white;
+}
+
+.status-badge.pending {
+  background-color: #ff9800;
+  color: white;
+}
+
+.approval-time {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+  display: block;
+}
+
+.action-btns {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.action-btn.approve {
+  background-color: #4caf50;
+  color: white;
+}
+
+.action-btn.unapprove {
+  background-color: #f44336;
+  color: white;
+}
+
+.no-results {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-size: 16px;
+}
+
+.loading, .access-denied, .error-message {
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 16px;
+}
+
+.error-message {
+  color: #f44336;
+}
+
+/* Mobile-specific enhancements */
+@media (max-width: 480px) {
+  .admin-dashboard {
+    padding: 10px;
+  }
+  
+  .stat-card {
+    padding: 12px 10px;
+  }
+  
+  .stat-card h3 {
+    font-size: 14px;
+  }
+  
+  .stat-card p {
+    font-size: 18px;
+  }
+  
+  .action-btns {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .action-btn {
+    width: 100%;
+    padding: 8px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .dashboard-header, .filters, .stats-summary, .logout-btn {
+    display: none;
+  }
+  
+  .table-container {
+    overflow: visible;
+    border: none;
+  }
+  
+  table {
+    min-width: 100%;
+  }
+}

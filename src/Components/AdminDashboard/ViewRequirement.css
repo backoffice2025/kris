@@ -1,0 +1,245 @@
+.view-requirement {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.view-header h1 {
+  margin: 0;
+  color: #333;
+}
+
+.view-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.back-btn, .print-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.back-btn {
+  background-color: #607d8b;
+  color: white;
+}
+
+.print-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.back-btn:hover {
+  background-color: #455a64;
+}
+
+.print-btn:hover {
+  background-color: #388e3c;
+}
+
+.view-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.requirement-meta {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.meta-row {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.meta-row:last-child {
+  margin-bottom: 0;
+}
+
+.meta-label {
+  font-weight: bold;
+  min-width: 120px;
+  color: #555;
+}
+
+.meta-value {
+  flex: 1;
+}
+
+.items-section {
+  margin-top: 30px;
+}
+
+.items-section h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.items-table th {
+  background-color: #f2f2f2;
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+}
+
+.items-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.status-badge.approved {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.status-badge.pending {
+  background-color: #FF9800;
+  color: white;
+}
+
+.approval-time {
+  display: block;
+  font-size: 12px;
+  margin-top: 4px;
+  opacity: 0.8;
+}
+
+.fulfillment-status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.fulfillment-status.fulfilled {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.fulfillment-status.pending {
+  background-color: #fff8e1;
+  color: #ff8f00;
+}
+
+.loading, .error, .not-found {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+}
+
+.error {
+  color: #f44336;
+}
+
+.not-found {
+  color: #666;
+}
+
+
+/* Make table scrollable on small screens */
+.items-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Improve table styling on mobile */
+.items-table {
+  min-width: 600px;
+}
+
+/* Force word wrap for long item names */
+.items-table td, .items-table th {
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Ensure checkbox and button cells don't overflow */
+.items-table td input[type="checkbox"],
+.items-table td button,
+.items-table td input[type="text"] {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Improve spacing below the meta info */
+.requirement-meta {
+  margin-bottom: 30px;
+}
+
+@media print {
+  .view-actions {
+    display: none;
+  }
+  
+  .view-content {
+    padding: 0;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .view-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .view-actions {
+    width: 100%;
+  }
+  
+  .back-btn, .print-btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .items-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+@media (max-width: 500px) {
+  .items-table td, .items-table th {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .view-content {
+    padding: 15px;
+  }
+}
