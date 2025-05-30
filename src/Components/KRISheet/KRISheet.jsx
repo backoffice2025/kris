@@ -87,7 +87,7 @@ const KRISheet = () => {
 
   return (
     <div className="kri-container">
-      <h1>Kitchen Requirement Issue Sheet (KRI)</h1>
+      <h1>Kitchen Requirement (KRI)</h1>
       {error && <div className="error-message">{error}</div>}
       
       {!submitted ? (
