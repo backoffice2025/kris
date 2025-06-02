@@ -7,7 +7,6 @@ const ItemRow = ({ item, index, onChange, onRemove, disabled }) => (
       placeholder="Item name"
       value={item.name}
       onChange={(e) => onChange(index, 'name', e.target.value)}
-      required
     />
     
     <div className="input-with-unit">
@@ -17,17 +16,17 @@ const ItemRow = ({ item, index, onChange, onRemove, disabled }) => (
         value={item.balance}
         onChange={(e) => onChange(index, 'balance', e.target.value)}
         min="0"
-        required
       />
       <select
         value={item.balanceUnit || 'unit'}
         onChange={(e) => onChange(index, 'balanceUnit', e.target.value)}
         className="unit-selector"
       >
-        <option value="kg">kg</option>
-        <option value="gm">gm</option>
-        <option value="unit">ltr</option>
-        <option value="bottle">bottle</option>
+<option value="kg">kg</option>
+<option value="gm">gm</option>
+<option value="ltr">ltr</option>
+<option value="bottle">bottle</option>
+<option value="unit">unit</option>
       </select>
     </div>
     
@@ -38,17 +37,17 @@ const ItemRow = ({ item, index, onChange, onRemove, disabled }) => (
         value={item.required}
         onChange={(e) => onChange(index, 'required', e.target.value)}
         min="0"
-        required
       />
       <select
         value={item.requiredUnit || 'unit'}
         onChange={(e) => onChange(index, 'requiredUnit', e.target.value)}
         className="unit-selector"
       >
-        <option value="kg">kg</option>
-        <option value="gm">gm</option>
-        <option value="unit">ltr</option>
-        <option value="bottle">bottle</option>
+<option value="kg">kg</option>
+<option value="gm">gm</option>
+<option value="ltr">ltr</option>
+<option value="bottle">bottle</option>
+<option value="unit">unit</option>
       </select>
     </div>
     
