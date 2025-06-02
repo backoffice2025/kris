@@ -397,38 +397,94 @@
 /* Responsive design */
 @media (max-width: 768px) {
   .kri-container {
-    padding: 1.5rem;
+    padding: 1rem;
     margin: 10px;
     border-radius: var(--border-radius-sm);
   }
-  
-  .kri-container h1 {
-    font-size: 1.5rem;
+
+  .form-group input[type="text"],
+  .form-group input[type="date"],
+  .form-group input[type="number"],
+  .item-row input {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.75rem;
+    min-height: 32px;
   }
-  
-    .item-row {
-    flex-direction: row; /* Keep row layout (was previously column) */
-    flex-wrap: wrap; /* Allow wrapping */
-    gap: 0.5rem; /* Reduce gap */
+
+  .item-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    overflow-x: auto; /* Horizontal scroll if needed */
+  }
+
+  .item-row input[name="name"] {
+    flex: 0 0 30%; /* Shrink to 30% of row */
+    min-width: 100px;
   }
 
   .qty-fields {
-    flex-direction: row; /* Side-by-side on mobile */
-    align-items: center;
-    gap: 1rem;
-    min-width: 0; /* Prevent overflow */
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    flex: 0 0 30%;
+    min-width: 120px;
   }
 
   .qty-fields input {
     flex: 1;
-    min-width: 100px; /* Prevent fields from getting too narrow */
+    font-size: 0.75rem;
+    padding: 0.35rem;
+    min-width: 60px;
   }
 
   .item-row .remove-btn {
-    width: auto; /* Reset full-width (was previously 100%) */
-    margin-left: auto; /* Push to right */
+    flex: 0 0 auto;
+    font-size: 0.75rem;
+    padding: 0.35rem 0.6rem;
+    white-space: nowrap;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .add-btn,
+  .submit-btn {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .department-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .department-header h1,
+  .kri-container h1 {
+    font-size: 1.5rem;
+  }
+
+  input, select, textarea {
+    appearance: none;
+    border-radius: var(--border-radius-sm);
+  }
+
+  /* Prevent zoom on focus in iOS */
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    input:focus,
+    select:focus,
+    textarea:focus {
+      font-size: 16px;
+    }
   }
 }
+
   
   .add-btn,
   .submit-btn,
