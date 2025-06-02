@@ -163,7 +163,7 @@ const AdminDashboard = () => {
         </div>
       </div>
 
-      <div className="table-container">
+      <div className="table-responsive">
         <table>
           <thead>
             <tr>
