@@ -142,5 +142,27 @@ export const mockItemsDatabase = {
     { name: 'Napkin', balance: "" },
     { name: 'Besan', balance: "" },
     { name: 'Yellow Chilli Powder', balance: "" }
+  ],
+  Service: [
+    { name: 'Tissue Paper', balance: "" },
+    { name: 'Red Mouth Freshner', balance: "" },
+    { name: 'Greenh Freshner', balance: "" },
+    { name: 'Wonder Wiper', balance: "" },
+    { name: 'Red Tabasco', balance: "" },
+    { name: 'Green Tabasco', balance: "" },
+    { name: 'White Sugar', balance: "" },
+    { name: 'Brown Sugar', balance: "" },
+    { name: 'Oregano', balance: "" },
+  ],
+    Ut: [
+    { name: 'Castic Soda', balance: "" },
+    { name: 'Garbage Bag Big ', balance: "" },
+    { name: 'Garbage Bag Small', balance: "" },
+    { name: 'Pocha', balance: "" },
+    { name: 'Surf', balance: "" },
+    { name: 'Juna Steel', balance: "" },
+    { name: 'Dustar', balance: "" },
+    { name: 'Juna Plastic', balance: "" },
+    { name: 'Wiper', balance: "" },
   ]
 };
