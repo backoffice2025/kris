@@ -41,6 +41,14 @@ const ViewRequirement = () => {
     fetchRequirement();
   }, [id]);
 
+  // Only show items where required > 0
+  const filteredItems = requirement?.items
+    ? requirement.items.filter(item => {
+        const req = Number(item.required);
+        return !isNaN(req) && req > 0;
+      })
+    : [];
+
   const handleDownloadPDF = async () => {
     try {
       setLoading(true);
@@ -50,7 +58,7 @@ const ViewRequirement = () => {
         logging: false,
         useCORS: true,
       });
-      
+
       const imgData = canvas.toDataURL('image/png');
       const pdf = new jsPDF({
         orientation: 'portrait',
@@ -90,9 +98,9 @@ const ViewRequirement = () => {
       <div className="view-header">
         <h1>{requirement.department} Department Requirement</h1>
         <div className="view-actions">
-         <button onClick={() => navigate('/admin')} className="back-btn">
-  Back to Dashboard
-</button>
+          <button onClick={() => navigate('/admin')} className="back-btn">
+            Back to Dashboard
+          </button>
           <button onClick={handleDownloadPDF} className="print-btn">
             Download as PDF
           </button>
@@ -129,58 +137,66 @@ const ViewRequirement = () => {
         <div className="items-section">
           <h2>Items List</h2>
           <div className="items-table-wrapper">
-          <table className="items-table">
-            <thead>
-              <tr>
-                <th>Item Name</th>
-                <th>Current Balance</th>
-                <th>Required Quantity</th>
-                <th>Issued</th>
-                <th>Remark</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {requirement.items.map((item, index) => (
-                <tr key={index}>
-                  <td>{item.name}</td>
-                  <td>{item.balance} {item.balanceUnit || 'units'}</td>
-                  <td>{item.required} {item.requiredUnit || 'units'}</td>
-                  <td>
-                    <input
-                      type="checkbox"
-                      checked={item.fulfilled || false}
-                      onChange={() => {
-                        const updatedItems = [...requirement.items];
-                        updatedItems[index].fulfilled = !updatedItems[index].fulfilled;
-                        setRequirement({ ...requirement, items: updatedItems });
-                      }}
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="text"
-                      placeholder="Add remark"
-                      value={item.remark || ''}
-                      onChange={(e) => {
-                        const updatedItems = [...requirement.items];
-                        updatedItems[index].remark = e.target.value;
-                        setRequirement({ ...requirement, items: updatedItems });
-                      }}
-                    />
-                  </td>
-                  <td>
-                    <button 
-                      onClick={() => handleEditItem(index)}
-                      className="edit-btn"
-                    >
-                      Edit
-                    </button>
-                  </td>
+            <table className="items-table">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Balance</th>
+                  <th>Requirement</th>
+                  <th>Issued</th>
+                  <th>Remark</th>
+                  <th>Actions</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {filteredItems.length > 0 ? (
+                  filteredItems.map((item, index) => (
+                    <tr key={index}>
+                      <td>{item.name}</td>
+                      <td>{item.balance} {item.balanceUnit || 'units'}</td>
+                      <td>{item.required} {item.requiredUnit || 'units'}</td>
+                      <td>
+                        <input
+                          type="checkbox"
+                          checked={item.fulfilled || false}
+                          onChange={() => {
+                            const updatedItems = [...requirement.items];
+                            updatedItems[index].fulfilled = !updatedItems[index].fulfilled;
+                            setRequirement({ ...requirement, items: updatedItems });
+                          }}
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Add remark"
+                          value={item.remark || ''}
+                          onChange={(e) => {
+                            const updatedItems = [...requirement.items];
+                            updatedItems[index].remark = e.target.value;
+                            setRequirement({ ...requirement, items: updatedItems });
+                          }}
+                        />
+                      </td>
+                      <td>
+                        <button 
+                          onClick={() => handleEditItem(index)}
+                          className="edit-btn"
+                        >
+                          Edit
+                        </button>
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan={6} style={{textAlign: "center"}}>
+                      No items with requirement greater than 0.
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
